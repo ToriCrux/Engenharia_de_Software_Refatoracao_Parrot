@@ -11,7 +11,10 @@ public class NorwegianBlueParrot extends Parrot {
 
     @Override
     public double getSpeed() {
-        return isNailed ? 0 : getSpeedWithVoltage(voltage);
+        boolean cannotFly = isNailed;
+        double voltageSpeed = getSpeedWithVoltage(voltage);
+
+        return cannotFly ? 0 : voltageSpeed;
     }
 
     @Override
